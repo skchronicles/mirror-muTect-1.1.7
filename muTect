@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+function abspath() { readlink -e "$1"; }
+outdir=$(abspath $(dirname  "$0"))
+
+java -Xmx2g -jar ${outdir:-/opt2/mirror-muTect-1.1.7}/muTect-1.1.7.jar "$@"
